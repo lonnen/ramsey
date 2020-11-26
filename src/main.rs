@@ -1,7 +1,9 @@
 use std::path::PathBuf;
 use structopt::StructOpt;
 
-#[derive(StructOpt)]
+pub(crate) use std::result::Result;
+
+#[derive(StructOpt, Debug)]
 struct Opt {
 
     #[structopt(short, long)]
@@ -10,13 +12,13 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 
-
-
     pattern: String,
     #[structopt(parse(from_os_str))]
     path: PathBuf,
 }
 
-fn main() {
-    let args = Opt::from_args();
+fn main() -> Result<()> {
+    let options = Opt::from_args();
+    println!("{:?}", options);
+    Ok(())
 }
