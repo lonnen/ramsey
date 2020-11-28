@@ -20,7 +20,7 @@ fn main() -> Result<()> {
     let args = Opt::from_args();
     match args.command {
         _ => {
-            println!("{:?}", args);
+            Opt::clap().print_help().unwrap()
         }
     }
     Ok(())
