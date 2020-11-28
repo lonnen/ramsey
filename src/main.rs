@@ -1,7 +1,9 @@
+mod error;
+
 use std::path::PathBuf;
 use structopt::StructOpt;
 
-pub(crate) use std::result::Result;
+pub(crate) use error::{Error, Result};
 
 #[derive(StructOpt, Debug)]
 struct Opt {
