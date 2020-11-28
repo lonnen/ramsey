@@ -1,9 +1,8 @@
 mod error;
 
-use std::path::PathBuf;
 use structopt::StructOpt;
 
-pub(crate) use error::{Error, Result};
+pub(crate) use error::Result;
 
 #[derive(StructOpt, Debug)]
 struct Opt {
@@ -14,13 +13,15 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 
-    pattern: String,
-    #[structopt(parse(from_os_str))]
-    path: PathBuf,
+    command: String,
 }
 
 fn main() -> Result<()> {
-    let options = Opt::from_args();
-    println!("{:?}", options);
+    let args = Opt::from_args();
+    match args.command {
+        _ => {
+            println!("{:?}", args);
+        }
+    }
     Ok(())
 }
