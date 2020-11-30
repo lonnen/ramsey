@@ -13,12 +13,20 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 
-    command: String,
+    #[structopt(subcommand)]
+    cmd: Command,
+}
+
+#[derive(StructOpt, Debug)]
+enum Command {
+    Graph {
+        adjacency: String
+    },
 }
 
 fn main() -> Result<()> {
     let args = Opt::from_args();
-    match args.command {
+    match args.cmd {
         _ => {
             Opt::clap().print_help().unwrap()
         }
