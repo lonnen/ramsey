@@ -17,6 +17,10 @@ struct Opt {
     cmd: Command,
 }
 
+fn parse_graph(adjacency_array: &str) -> Result<String, error::Error> {
+    Ok(adjacency_array.to_string())
+}
+
 #[derive(StructOpt, Debug)]
 enum Command {
     Graph {
@@ -31,7 +35,7 @@ enum Command {
         /// Add the top, left value to the array, then traverse the column from top to bottom.
         /// After the last value in the column, move back to the top and one position to the right.
         /// Continue adding values in this way until you've added the entire matrix to the array.
-        #[structopt(name = "adjacency array")]
+        #[structopt(name = "adjacency array", parse(try_from_str = parse_graph))]
         adjacency_array: String
     },
 }
