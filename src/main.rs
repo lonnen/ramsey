@@ -43,9 +43,9 @@ enum Command {
 fn main() -> Result<()> {
     let args = Opt::from_args();
     match args.cmd {
-        _ => {
-            Opt::clap().print_help().unwrap()
-        }
+        Command::Graph { adjacency_array } => {
+            println!("Graph: {:?}", adjacency_array);
+        },
     }
     Ok(())
 }
