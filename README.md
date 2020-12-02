@@ -1,4 +1,4 @@
-# ramset
+# ramsey
 
  Tools for investigating Ramsey numbers and 2-colorings on undirected, unweighted graphs
 
