@@ -1,10 +1,14 @@
 [package]
 name = "ramsey"
 version = "0.1.0"
+description = "Tools for investigating Ramsey numbers and 2-colorings on undirected, unweighted graphs"
+
+
 authors = ["lonnen <chris.lonnen@gmail.com>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+license = "MIT/Apache-2.0"
+repository = "https://github.com/lonnen/ramsey"
+readme = "README.md"
 
 [dependencies]
 structopt = "0.3"
