@@ -4,7 +4,6 @@ use structopt::StructOpt;
 
 #[derive(StructOpt, Debug)]
 pub(crate) struct Options {
-
     #[structopt(short, long)]
     pub debug: bool,
 
@@ -30,11 +29,10 @@ pub(crate) enum Command {
         /// After the last value in the column, move back to the top and one position to the right.
         /// Continue adding values in this way until you've added the entire matrix to the array.
         #[structopt(name = "adjacency array", parse(try_from_str = parse_graph))]
-        adjacency_array: String
+        adjacency_array: String,
     },
 }
 
 fn parse_graph(adjacency_array: &str) -> Result<String> {
-
     Ok(adjacency_array.to_string())
 }

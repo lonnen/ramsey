@@ -10,7 +10,7 @@ fn main() -> Result<()> {
     match args.cmd {
         app::Command::Graph { adjacency_array } => {
             println!("Graph: {:?}", adjacency_array);
-        },
+        }
     }
     Ok(())
 }
