@@ -1,1 +1,1 @@
-pub type Graph<'a> = std::collections::hash_map::Keys<'a, usize, usize>;
+pub type Graph<'a> = std::collections::hash_map::Keys<'a, usize, Vec<usize>>;
